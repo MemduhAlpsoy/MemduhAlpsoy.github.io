@@ -55,6 +55,20 @@ h2{font-size:1.4rem;margin-bottom:12px}
 
 .section-projects p{color:var(--muted)}
 
+/* Projects layout */
+.projects-grid{display:flex;flex-direction:column;gap:22px;margin-top:18px}
+.project{display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start}
+.project-gallery{display:flex;gap:8px}
+.project-gallery img{flex:1 1 0;width:100%;height:120px;object-fit:cover;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.02)}
+.project-desc{padding:6px 0}
+.project-title{margin:0 0 8px;font-size:1.05rem}
+.project-excerpt{margin:0;color:var(--muted);min-height:56px}
+
+@media (max-width:880px){
+	.project{grid-template-columns:1fr;}
+	.project-gallery img{height:100px}
+}
+
 .site-footer{border-top:1px solid rgba(255,255,255,0.02);padding:20px 0;color:var(--muted)}
 
 @media (max-width:600px){
