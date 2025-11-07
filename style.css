@@ -58,9 +58,11 @@ h2{font-size:1.4rem;margin-bottom:12px}
 /* Projects layout */
 .projects-grid{display:flex;flex-direction:column;gap:22px;margin-top:18px}
 .project{display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start}
+.project-heading{margin:0 0 8px 0;font-size:1.2rem;color:#fff;grid-column:1/-1}
+.project-divider{height:1px;background:linear-gradient(90deg,var(--accent),transparent);margin-bottom:12px;grid-column:1/-1}
 .project-gallery{
-	/* stacked/overlap layout: images overlap each other like a small stack */
-	display:flex;align-items:center;position:relative;padding-left:0;
+    /* stacked/overlap layout: images overlap each other like a small stack */
+    display:flex;align-items:center;position:relative;padding-left:0;
 }
 .project-gallery img{
 	width:120px;height:120px;object-fit:cover;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.02);box-shadow:0 6px 18px rgba(2,6,23,0.6);transition:transform .18s, box-shadow .18s;
