@@ -65,15 +65,16 @@ h2{font-size:1.4rem;margin-bottom:12px}
     display:flex;align-items:center;position:relative;padding-left:0;
 }
 .project-gallery img{
-	width:120px;height:120px;object-fit:cover;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.02);box-shadow:0 6px 18px rgba(2,6,23,0.6);transition:transform .18s, box-shadow .18s;
+	width:120px;height:120px;object-fit:cover;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.02);box-shadow:0 6px 18px rgba(2,6,23,0.6);transition:transform .18s, box-shadow .18s, z-index 0s .18s;position:relative;
 }
 /* overlap by negative margin; first image stays in place */
 .project-gallery img + img{margin-left:-36px}
-/* control stacking order so first image appears on top */
+/* control stacking order so first image appears on top by default */
 .project-gallery img:nth-child(1){z-index:3}
 .project-gallery img:nth-child(2){z-index:2}
 .project-gallery img:nth-child(3){z-index:1}
-.project-gallery img:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(2,6,23,0.7)}
+/* on hover: bring to front immediately, lift up, enhance shadow */
+.project-gallery img:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(2,6,23,0.7);z-index:10;transition:transform .18s, box-shadow .18s, z-index 0s}
 .project-desc{padding:6px 0}
 .project-title{margin:0 0 8px;font-size:1.05rem}
 .project-excerpt{margin:0;color:var(--muted);min-height:56px}
