@@ -5,24 +5,44 @@ document.addEventListener('DOMContentLoaded', function(){
 	const el = document.getElementById('year');
 	if(el) el.textContent = y;
 
-	// Active nav link on scroll
+	// Navigation-driven single-section view
 	const navLinks = Array.from(document.querySelectorAll('.main-nav a'));
-	const sections = navLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+	const sections = Array.from(document.querySelectorAll('main .section'));
 
-	function onScroll(){
-		const scrollPos = window.scrollY + 120; // offset for header
-		for(let i=sections.length-1;i>=0;i--){
-			const s = sections[i];
-			if(s && s.offsetTop <= scrollPos){
-				navLinks.forEach(a=>a.classList.remove('active'));
-				const id = '#'+s.id;
-				const match = navLinks.find(a=>a.getAttribute('href')===id);
-				if(match) match.classList.add('active');
-				break;
-			}
+	function showSection(hash, pushHistory = false){
+		if(!hash) hash = '#hakkimda';
+		const target = document.querySelector(hash);
+		if(!target) return;
+
+		// Hide others, show target
+		sections.forEach(s => {
+			if(s === target) s.classList.remove('is-hidden');
+			else s.classList.add('is-hidden');
+		});
+
+		// Update active nav link
+		navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === hash));
+
+		// Update URL without reloading (optional)
+		if(pushHistory){
+			history.pushState(null, '', hash);
 		}
 	}
 
-	window.addEventListener('scroll', onScroll, {passive:true});
-	onScroll();
+	// Click handlers for nav links
+	navLinks.forEach(a => {
+		a.addEventListener('click', function(e){
+			e.preventDefault();
+			const href = a.getAttribute('href');
+			showSection(href, true);
+		});
+	});
+
+	// React to back/forward and manual hash changes
+	window.addEventListener('hashchange', function(){
+		showSection(location.hash || '#hakkimda', false);
+	});
+
+	// Initial view: if there's a hash and matching section, show it; otherwise show hakkimda
+	showSection(location.hash || '#hakkimda', false);
 });

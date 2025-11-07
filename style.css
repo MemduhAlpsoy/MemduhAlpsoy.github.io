@@ -4,6 +4,7 @@
 	--muted:#9aa6b2;
 	--accent:#7dd3fc; /* light cyan */
 	--accent-2:#a78bfa; /* soft purple */
+	--header-height:64px;
 	--glass: rgba(255,255,255,0.03);
 }
 
@@ -11,6 +12,8 @@
 html{scroll-behavior:smooth}
 body{
 	margin:0;
+	/* Reserve space for the fixed header so page content starts below it */
+	padding-top:var(--header-height);
 	font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 	background:linear-gradient(180deg,var(--bg),#071020);
 	color:#e6eef6;
@@ -21,10 +24,16 @@ body{
 .container{max-width:1000px;margin:0 auto;padding:0 20px}
 
 .site-header{
-	position:sticky;top:0;z-index:50;background:linear-gradient(180deg, rgba(10,14,20,0.6), rgba(10,14,20,0.35));backdrop-filter: blur(6px);
+	/* Fixed header so it visually separates from the home content */
+	position:fixed;
+	top:0;left:0;right:0;
+	height:var(--header-height);
+	z-index:50;
+	background:linear-gradient(180deg, rgba(10,14,20,0.95), rgba(10,14,20,0.98));
+	backdrop-filter: blur(6px);
 	border-bottom:1px solid rgba(255,255,255,0.02);
 }
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:100%;padding:0 0}
 .logo{font-weight:700;color:var(--accent);text-decoration:none;font-size:1.05rem}
 
 .main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px}
@@ -58,4 +67,7 @@ h2{font-size:1.4rem;margin-bottom:12px}
 
 /* Empty state styling for skills-grid when user hasn't added items */
 .skills-grid:empty{min-height:80px;display:flex;align-items:center;justify-content:center;color:var(--muted);border:1px dashed rgba(255,255,255,0.03);padding:18px;border-radius:10px}
+
+/* Toggle section visibility when using header navigation */
+.section.is-hidden{display:none}
 
