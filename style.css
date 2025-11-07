@@ -58,16 +58,35 @@ h2{font-size:1.4rem;margin-bottom:12px}
 /* Projects layout */
 .projects-grid{display:flex;flex-direction:column;gap:22px;margin-top:18px}
 .project{display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start}
-.project-gallery{display:flex;gap:8px}
-.project-gallery img{flex:1 1 0;width:100%;height:120px;object-fit:cover;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.02)}
+.project-gallery{
+	/* stacked/overlap layout: images overlap each other like a small stack */
+	display:flex;align-items:center;position:relative;padding-left:0;
+}
+.project-gallery img{
+	width:120px;height:120px;object-fit:cover;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.02);box-shadow:0 6px 18px rgba(2,6,23,0.6);transition:transform .18s, box-shadow .18s;
+}
+/* overlap by negative margin; first image stays in place */
+.project-gallery img + img{margin-left:-36px}
+/* control stacking order so first image appears on top */
+.project-gallery img:nth-child(1){z-index:3}
+.project-gallery img:nth-child(2){z-index:2}
+.project-gallery img:nth-child(3){z-index:1}
+.project-gallery img:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(2,6,23,0.7)}
 .project-desc{padding:6px 0}
 .project-title{margin:0 0 8px;font-size:1.05rem}
 .project-excerpt{margin:0;color:var(--muted);min-height:56px}
 
 @media (max-width:880px){
 	.project{grid-template-columns:1fr;}
-	.project-gallery img{height:100px}
+	/* On small screens, stack becomes regular horizontal/vertical images */
+	.project-gallery{gap:8px}
+	.project-gallery img{width:100%;height:100px;margin-left:0;z-index:auto}
 }
+
+/* Footer contact styling */
+.footer-contact{margin-top:10px;display:flex;gap:18px;flex-wrap:wrap}
+.footer-contact-link{color:var(--muted);text-decoration:none;font-size:.95rem}
+.footer-contact-link:hover{color:var(--accent)}
 
 .site-footer{border-top:1px solid rgba(255,255,255,0.02);padding:20px 0;color:var(--muted)}
 
