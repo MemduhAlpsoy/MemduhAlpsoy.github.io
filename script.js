@@ -45,4 +45,23 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	// Initial view: if there's a hash and matching section, show it; otherwise show hakkimda
 	showSection(location.hash || '#hakkimda', false);
+
+	// Project detail accordion toggle
+	const detailToggles = document.querySelectorAll('.detail-toggle');
+	detailToggles.forEach(toggle => {
+		toggle.addEventListener('click', function(){
+			const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+			const content = toggle.nextElementSibling;
+			
+			if(isExpanded){
+				// Close
+				toggle.setAttribute('aria-expanded', 'false');
+				content.classList.remove('is-open');
+			} else {
+				// Open
+				toggle.setAttribute('aria-expanded', 'true');
+				content.classList.add('is-open');
+			}
+		});
+	});
 });
