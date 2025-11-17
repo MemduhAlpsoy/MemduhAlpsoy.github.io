@@ -1,233 +1,328 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Memoli</title>
-		<link rel="stylesheet" href="./style.css" />
-		<link rel="icon" type="image/x-icon" href="Assets/Icon/favicon.ico">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Memoli.exe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+    </div>
 
-	</head>
-	<body>
-		<header class="site-header">
-			<div class="container header-inner">
-				<a class="logo" href="#">Memduh { Memoli } Alpsoy</a>
-				<nav class="main-nav" aria-label="Ana navigasyon">
-					<ul>
-						<li><a href="#hakkimda">Hakkımda</a></li>
-						<li><a href="#yetenekler">Yetenekler</a></li>
-						<li><a href="#projeler">Projeler</a></li>
-					</ul>
-				</nav>
-			</div>
-		</header>
+    <!-- Cursor Effect -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
 
-		<main>
-			<section id="hakkimda" class="section section-hero">
-				<div class="container">
-					<h1>Ben Kimim ?</h1>
-					<p class="lead">Merhaba! Ben Memduh. Oyun yapmaya hevesli bir junior game developer.Küçüklükten beri oyunların sadece “oynanacak bir şey” değil, 
-						başka dünyalara açılan kapılar olduğunu düşünürdüm. 
-						Şimdi o kapıları kendim tasarlamak için kod yazıyor, deniyor, bozuyor ve tekrar yapıyorum.Godot ve Unity ile deneyler yapmayı, 
-						mekanikler oluşturmaya kafa yormayı ve kendi hayal gücümden doğan şeyleri ekranda görmekten inanılmaz keyif alıyorum.
-						Bu site, hem gelişim sürecimi hem de üzerinde çalıştığım projeleri göstermek için oluşturduğum bir portfolyo. 
-						Eğer sen de oyun geliştirme ile ilgileniyorsan, ortak yönlerimiz çok olabilir!</p>
-				</div>
-			</section>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">&lt;Memduh "Memoli" Alpsoy&gt;</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Ana Sayfa</a></li>
+                <li><a href="#about" class="nav-link">Hakkımda</a></li>
+                <li><a href="#skills" class="nav-link">Yetenekler</a></li>
+                <li><a href="#projects" class="nav-link">Projeler</a></li>
+                <li><a href="#contact" class="nav-link">İletişim</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-			<section id="yetenekler" class="section section-skills">
-				<div class="container">
-					<h2>Yetenekler</h2>
-					<!-- Yeteneklerinizi buraya ekleyin. Aşağıdaki 'skills-grid' boş bırakıldı, kendi yetenek kartlarınızı ekleyin. -->
-					<div class="skills-grid" aria-live="polite">
-						<!-- Örnek kart yapısı (kaldırabilir veya çoğaltabilirsiniz):
-						<div class="skill-card">
-							<h3>Skill Name</h3>
-							<p>Kısa açıklama</p>
-						</div>
-						-->
-					</div>
-				</div>
-			</section>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">Merhaba, Ben</span>
+                <span class="title-line highlight">Memduh Alpsoy</span>
+            </h1>
+            <p class="hero-subtitle typing-effect">Junior Game Developer & Game Designer</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">
+                    <span>Projelerimi Gör</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span>İletişime Geç</span>
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>  
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll</p>
+        </div>
+    </section>
 
-			<section id="projeler" class="section section-projects">
-				<div class="container">
-					<h2>Projeler</h2>
-					<!-- Aşağıda 2-3 proje için yer tutucular var. Her proje: solda 3 fotoğraf (src'yi değiştirin), sağda başlık ve kısa açıklama alanı (boş bırakılmıştır). -->
-					<div class="projects-grid">
-					<!-- Proje 1 -->
-					<div class="project">
-						<h3 class="project-heading">Aether Defender</h3>
-						<div class="project-divider"></div>
-						<div class="project-gallery" aria-hidden="false">
-							<!-- 1x1 transparent pixel placeholder; değiştirin -->
-							<img src="Assets/Images/Aether2.png" alt="Proje 1 - fotoğraf 1" />
-							<img src="Assets/Images/Aether1.png" alt="Proje 1 - fotoğraf 2" />
-							<img src="Assets/Images/Aether3.png" alt="Proje 1 - fotoğraf 3" />
-						</div>
-						<div class="project-desc">
-							<!-- Oyunun Türü -->
-							<div class="detail-item">
-								<button class="detail-toggle" aria-expanded="false">
-									<span class="detail-icon">▶</span>
-									<span class="detail-label">Oyunun Türü</span>
-								</button>
-								<div class="detail-content">
-									<p>2D Platformer, Aksiyon-Macera</p>
-								</div>
-							</div>
-							<!-- Oyunun Hikayesi -->
-							<div class="detail-item">
-								<button class="detail-toggle" aria-expanded="false">
-									<span class="detail-icon">▶</span>
-									<span class="detail-label">Oyunun Hikayesi</span>
-								</button>
-								<div class="detail-content">
-									<p>Evrenin yapısını oluşturan ve çalınmış olan 3 taşın geri getirilmesi için verilen bir görevi konu alır.</p>
-								</div>
-							</div>
-							<!-- Oyunun Mekanikleri -->
-							<div class="detail-item">
-								<button class="detail-toggle" aria-expanded="false">
-									<span class="detail-icon">▶</span>
-									<span class="detail-label">Oyunun Mekanikleri</span>
-								</button>
-								<div class="detail-content">
-									<p>Zıplama, dash, duvar tırmanma ve düşman saldırıları.</p>
-								</div>
-							</div>
-							<!-- Teknik Detaylar -->
-							<div class="detail-item">
-								<button class="detail-toggle" aria-expanded="false">
-									<span class="detail-icon">▶</span>
-									<span class="detail-label">Teknik Detaylar</span>
-								</button>
-								<div class="detail-content">
-									<p>Unity • C# • 2D Physics • Tilemap</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Proje 2 -->
-					<div class="project">
-						<h3 class="project-heading">Crashing Metal</h3>
-						<div class="project-divider"></div>
-						<div class="project-gallery">
-							<img src="Assets/Images/Crash1.png" alt="Proje 2 - fotoğraf 1" />
-							<img src="Assets/Images/Crash2.png" alt="Proje 2 - fotoğraf 2" />
-							<img src="Assets/Images/Crash3.png" alt="Proje 2 - fotoğraf 3" />
-						</div>
-						<div class="project-desc">
-							<!-- Oyunun Türü -->
-							<div class="detail-item">
-								<button class="detail-toggle" aria-expanded="false">
-									<span class="detail-icon">▶</span>
-									<span class="detail-label">Oyunun Türü</span>
-								</button>
-								<div class="detail-content">
-									<p>Vampire Survivor-like, Bullet Hell, Roguelike</p>
-								</div>
-							</div>
-							<!-- Oyunun Hikayesi -->
-							<div class="detail-item">
-								<button class="detail-toggle" aria-expanded="false">
-									<span class="detail-icon">▶</span>
-									<span class="detail-label">Oyunun Hikayesi</span>
-								</button>
-								<div class="detail-content">
-									<p>Akın akın gelen robotik düşmanlara karşı mıknatısın gücünü kullanarak hayatta kalmaya çalışırsınız.</p>
-								</div>
-							</div>
-							<!-- Oyunun Mekanikleri -->
-							<div class="detail-item">
-								<button class="detail-toggle" aria-expanded="false">
-									<span class="detail-icon">▶</span>
-									<span class="detail-label">Oyunun Mekanikleri</span>
-								</button>
-								<div class="detail-content">
-									<p>Mıknatıs kontrolü, otomatik ateş, upgrade sistemi, düşman dalgaları.</p>
-								</div>
-							</div>
-							<!-- Teknik Detaylar -->
-							<div class="detail-item">
-								<button class="detail-toggle" aria-expanded="false">
-									<span class="detail-icon">▶</span>
-									<span class="detail-label">Teknik Detaylar</span>
-								</button>
-								<div class="detail-content">
-									<p>Godot 4 • GDScript • Particle Systems • AI Behavior</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Proje 3 -->
-					<div class="project">
-						<h3 class="project-heading">Echoes of Time</h3>
-						<div class="project-divider"></div>
-						<div class="project-gallery">
-							<img src="Assets/Images/Echoes1.png" alt="Proje 3 - fotoğraf 1" />
-							<img src="Assets/Images/Echoes2.png" alt="Proje 3 - fotoğraf 2" />
-							<img src="Assets/Images/Echoes3.png" alt="Proje 3 - fotoğraf 3" />
-						</div>
-						<div class="project-desc">
-							<!-- Oyunun Türü -->
-							<div class="detail-item">
-								<button class="detail-toggle" aria-expanded="false">
-									<span class="detail-icon">▶</span>
-									<span class="detail-label">Oyunun Türü</span>
-								</button>
-								<div class="detail-content">
-									<p>Puzzle-Platformer, Time Manipulation</p>
-								</div>
-							</div>
-							<!-- Oyunun Hikayesi -->
-							<div class="detail-item">
-								<button class="detail-toggle" aria-expanded="false">
-									<span class="detail-icon">▶</span>
-									<span class="detail-label">Oyunun Hikayesi</span>
-								</button>
-								<div class="detail-content">
-									<p>Kendisini belirlediği bir zamandaki haline geri döndürebilen bir karakterin hikayesini anlatır.</p>
-								</div>
-							</div>
-							<!-- Oyunun Mekanikleri -->
-							<div class="detail-item">
-								<button class="detail-toggle" aria-expanded="false">
-									<span class="detail-icon">▶</span>
-									<span class="detail-label">Oyunun Mekanikleri</span>
-								</button>
-								<div class="detail-content">
-									<p>Zaman sarma, snapshot sistemi, puzzle çözme, platforming.</p>
-								</div>
-							</div>
-							<!-- Teknik Detaylar -->
-							<div class="detail-item">
-								<button class="detail-toggle" aria-expanded="false">
-									<span class="detail-icon">▶</span>
-									<span class="detail-label">Teknik Detaylar</span>
-								</button>
-								<div class="detail-content">
-									<p>Unity • C# • State Management • Animation System</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					</div>
-				</div>
-			</section>
-		</main>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">
+                <span>Hakkımda</span>
+                <div class="title-underline"></div>
+            </h2>
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-left">
+                    <h3>Tutkulu Bir Geliştirici</h3>
+                    <p>Merhaba! Ben web teknolojilerine tutkuyla bağlı bir geliştiriciyim. Modern ve kullanıcı dostu arayüzler tasarlamayı, kod yazmayı ve sürekli öğrenmeyi seviyorum.</p>
+                    <p>Her proje benim için yeni bir öğrenme fırsatı. Temiz kod, iyi tasarım ve mükemmel kullanıcı deneyimi ilkelerine bağlıyım.</p>
+                    <div class="about-info">
+                        <div class="info-item">
+                            <i class="fas fa-birthday-cake"></i>
+                            <span>Yaş: 20</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Konum: Yalova</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email: memalpsoy@gmail.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>Tel: +90 552 327 33 92</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary download-cv">
+                        <span>CV İndir</span>
+                        <i class="fas fa-download"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-		<footer class="site-footer">
-			<div class="container">
-				<p>© <span id="year"></span> Memduh Alpsoy. Tüm hakları saklıdır.</p>
-				<!-- İletişim bilgileri: telefon ve e-posta yer tutucuları -->
-				<div class="footer-contact" aria-label="İletişim">
-					<a class="footer-contact-link" href="tel:+90-552-327-33-92">Telefon: <span class="tel-placeholder">+90 (552) 327 33 92</span></a>
-					<a class="footer-contact-link" href="mailto:memalpsoy@gmail.com">E-posta: <span class="email-placeholder">memalpsoy@gmail.com</span></a>
-				</div>
-			</div>
-		</footer>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">
+                <span>Yeteneklerim</span>
+                <div class="title-underline"></div>
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="skill-icon">
+                        <i class="fab fa-unity"></i>
+                    </div>
+                    <h3>Unity</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="30"></div>
+                    </div>
+                    <span class="skill-percentage">30%</span>
+                </div>
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="skill-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Godot</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="65"></div>
+                    </div>
+                    <span class="skill-percentage">65%</span>
+                </div>
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="skill-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>FL Studio</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="10"></div>
+                    </div>
+                    <span class="skill-percentage">10%</span>
+                </div>
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="skill-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Blender</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="15"></div>
+                    </div>
+                    <span class="skill-percentage">15%</span>
+                </div>
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="skill-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <h3>Photoshop</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="25"></div>
+                    </div>
+                    <span class="skill-percentage">25%</span>
+                </div>
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="skill-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Aseprite</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="50"></div>
+                    </div>
+                    <span class="skill-percentage">50%</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-		<script src="./script.js"></script>
-	</body>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">
+                <span>Projelerim</span>
+                <div class="title-underline"></div>
+            </h2>
+            <div class="projects-grid">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="Assets/Images/Aether1.png" alt="Project 1">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Aether Defender</h3>
+                        <p>Her bölümde farklı mekaniklerle oynanışı canlı tutan bir platformer</p>
+                        <div class="project-tags">
+                            <span class="tag">Godot</span>
+                            <span class="tag">Aseprite</span>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="Assets/Images/Crash1.png" alt="Project 2">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Crashing Metals</h3>
+                        <p>İtme ve Çekme gücüne sahip bir karakterle hayatta kalmaya çalıştığınız bir vampire-survivorlike</p>
+                        <div class="project-tags">
+                            <span class="tag">Godot</span>
+                            <span class="tag">Aseprite</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image">
+                        <img src="Assets/Images/Echoes1.png" alt="Project 3">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Echoes of Time</h3>
+                        <p>Zamanda geri giderek yolunuzu açtığınız bir puzzle-platformer</p>
+                        <div class="project-tags">
+                            <span class="tag">Godot</span>
+                            <span class="tag">Aseprite</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">
+                <span>İletişim</span>
+                <div class="title-underline"></div>
+            </h2>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Benimle İletişime Geçin</h3>
+                    <p>Benimle iletişime geçebileceğiniz yerler</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Adres</h4>
+                                <p>Yalova, Türkiye</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>memalpsoy@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Telefon</h4>
+                                <p>+90 552 327 33 92</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/MemduhAlpsoy" target = "_blank" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/memduh-alpsoy-39a278341" target = "_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/memduhalpsoy" target = "_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form" data-aos="fade-left">
+                    <div class="form-group">
+                        <input type="text" placeholder="Adınız" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Adresiniz" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Konu" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Mesajınız" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <span>Gönder</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 memoli. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
