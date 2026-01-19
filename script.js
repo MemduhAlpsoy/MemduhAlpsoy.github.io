@@ -378,3 +378,35 @@ window.addEventListener('scroll', () => {
         // Scroll animations here
     });
 }, { passive: true });
+
+function backenddenVeriCek() {
+    const kutu = document.getElementById("sonucKutusu");
+    
+    // Yükleniyor efekti verelim
+    kutu.innerHTML = 'Sunucuya bağlanılıyor... <i class="fas fa-spinner fa-spin"></i> (Uyku modundaysa 30sn sürebilir)';
+    
+    // Senin Render URL'in
+    const url = "https://backend-api-er6z.onrender.com/api/veri";
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            console.log("Gelen Veri:", data);
+            
+            // Gelen veriyi HTML formatında yazdıralım
+            kutu.innerHTML = `
+                <div style="color: #4CAF50; font-weight: bold; margin-bottom: 5px;">
+                    <i class="fas fa-check-circle"></i> ${data.baslik}
+                </div>
+                <div>${data.icerik}</div>
+            `;
+        })
+        .catch(error => {
+            console.error("Hata:", error);
+            kutu.innerHTML = `
+                <div style="color: #ff4757;">
+                    <i class="fas fa-exclamation-circle"></i> Bağlantı hatası oluştu. Konsola bakınız.
+                </div>
+            `;
+        });
+}
